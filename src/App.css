@@ -1,98 +1,236 @@
-.front{
-  width: 500px;
-  background-color: rgba(137, 43, 226, 0.562);
-  height: 500px;
-  margin: 75px auto;
-  border-radius: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+.card {
+  width: 600px;
+  margin: 0 auto;
+  max-width: 90%;
+  min-height: 500px;
+  background: #1d1d1d;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
 @media (max-width:586px) {
-  .front{
-    width: 100%;
-  }
+    .card{
+        width: 100%;
+        height: 90%;
+    }
 }
 
-.heading{
-font-size: 50px;
+.heading {
+  color: #fff;
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 3rem;
 }
 
-.btn{
-background-color: rgba(0, 255, 255, 0.37);
-padding: 10px;
-border-radius: 5px;
-font-size: 30px;
-cursor: pointer;
-}
-
-.middle{
-  background-color: rgba(165, 42, 42, 0.356);
-  width: 500px;
-  height: 500px;
-  margin: 75px auto;
-  border-radius: 10px;
+.menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
-@media (max-width:586px) {
-  .middle{
-    width: 100%;
-    padding: 0;
-  }
-  .question{
-    text-align: center;
-    font-size: 22px;
-  }
+.text {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #c4c5c5;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.option{
+.input-wrap {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  position: relative;
+}
+
+.input {
+  background: #323232;
+  border: none;
+  padding: 10px 20px;
+  width: 300px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.alert {
+  color: red;
+  position: absolute;
+  top: 40px;
+  left: 5px;
+}
+
+.btn {
+  background: #0077ff;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #0149ac;
+}
+
+.enabled {
+  opacity: 1;
+}
+
+.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.question {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-}
-
-.option button{
-border-radius: 10px;
-font-size: medium;
-cursor: pointer;
-padding: 5px;
-}
-
-.final-btn{
-  background-color: red;
-}
-
-.submit-btn{
-  background-color: green;
-}
-
-.last{
-  background-color: rgba(0, 128, 0, 0.397);
-  width: 500px;
-  height: 500px;
-  margin: 75px auto;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+}
+
+.option {
+  width: 80%;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.option:hover {
+  background: #0077ff;
+}
+
+.notSelected {
+  background: #323232;
+}
+
+.selected {
+  background: #0077ff;
+}
+
+.funcBtn {
+  margin: 20px auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
 }
 
 @media (max-width:586px) {
-  .last{
-    width: 100%;
-    padding: 0 0 15px 0;
+    .funcBtn {
+        gap: 3px;
+    }
+}
+
+.funcBtn > button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.funcBtn > button:nth-child(1) {
+  background-color: rgba(255, 0, 0, 0.563);
+  transition: all 0.5s ease-in-out;
+}
+
+.funcBtn > button:nth-child(1):hover {
+  background-color: rgba(193, 1, 1, 0.563);
+}
+
+.number{
+  width: 10px;
+  margin: 30px auto;
+}
+
+@media (max-width:586px) {
+  .number{
+    margin: 10px auto;
   }
 }
-.result{
-  font-size: 50px;
+
+.number span:nth-child(1){
+  font-size: 28px;
 }
+
+.user-name {
+  color: red;
+  font-family: cursive;
+  text-transform: capitalize;
+}
+
+.score {
+  font-size: 42px;
+}
+
+.digit {
+  color: green;
+}
+
+.digit1 {
+  color: red;
+}
+
+.restart {
+  margin: 20px auto;
+}
+
+.timer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #323232;
+}
+
+.progress{
+  height: 5px;
+  width: 0;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+
